@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="justify-content: center; align-items: center;">
+    <center><button onclick="GetApi()">Teste GetApi</button></center>
+    <br /><br /><br />
+    <center><button onclick="GetApi2()">Teste GetApi2</button></center>
+    <br /><br /><br />
+    <center><button onclick="GetApi3()">Teste GetApi3</button></center>
+</body>
+
+<script>
+    function GetApi() {
+        fetch('http://localhost:8080/api/produtos').then(function (response) {
+            return response.json();
+        }).then(function (string) {
+            console.log(string.json());
+        }).catch(function (err) {
+            console.log('Fetch Error', err);
+        });
+    }
+
+    function GetApi2() {
+        fetch('http://localhost:8080/api/produtos', {
+            method: 'GET'
+        })
+            .then(function (response) { return console.log(response.json()); })
+            .then(function (json) {
+                // use the json
+                console.log(json);
+                console.log("ok");
+            });
+    }
+    function GetApi3() {
+        fetch('http://localhost:8080/api/produtos')
+            .then(response => response.json())
+            .then(data => console.log(data));
+    }
+</script>
+
+</html>

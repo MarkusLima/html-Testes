@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+  font-family: PoppinsRegular;
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/Poppins-Regular.ttf');
+}
+
+a{
+    text-decoration: none;
+}
